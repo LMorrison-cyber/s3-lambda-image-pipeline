@@ -1,91 +1,66 @@
-🖼️ Serverless Image Pipeline with Terraform, S3, Lambda & CloudWatch
+# 🖼️ S3 Lambda Image Pipeline
 
+A serverless image processing pipeline built with AWS S3, Lambda, CloudWatch, and Python.
 
-This project automates an image-processing pipeline using AWS S3, Lambda, and CloudWatch, all provisioned using Terraform. It's a cloud-native serverless solution ideal for showcasing infrastructure-as-code and automation skills.
+![Project Banner](./assets/banner.png)
+![Terraform Deploy](https://github.com/LMorrison-cyber/s3-lambda-image-pipeline/actions/workflows/terraform.yml/badge.svg)
 
-📂 Folder Structure
-python
+---
+
+## 🔧 Architecture Overview
+
+This project automatically processes images uploaded to S3 using Lambda and monitors behavior with CloudWatch.
+
+![Architecture Diagram](./assets/architecture-diagram.png)
+
+---
+
+## 🚀 Continuous Deployment with GitHub Actions
+
+Every push to `main`:
+
+- 🧪 Validates Terraform code  
+- 🚀 Provisions AWS infrastructure  
+- 🔐 Uses GitHub Secrets for AWS credentials
+
+| Secret Name               | Description                    |
+|---------------------------|--------------------------------|
+| `AWS_ACCESS_KEY_ID`       | AWS access key ID              |
+| `AWS_SECRET_ACCESS_KEY`   | AWS secret access key          |
+| `AWS_REGION`              | AWS region (e.g., `us-east-1`) |
+
+---
+
+## 📂 Project Structure
+
+s3-lambda-image-pipeline/ ├── lambda/ # Python Lambda function │ └── handler.py ├── provider.tf # AWS provider config ├── access_analyzer.tf # Access Analyzer ├── setup_terraform_aws.sh # Terraform automation └── .github/ └── workflows/ └── terraform.yml # CI/CD Workflow
+
+yaml
 Copy
 Edit
-s3-lambda-image-pipeline/
-├── .github/workflows/         # GitHub Actions CI/CD pipeline
-│   └── terraform.yml
-├── lambda/                    # Python Lambda function
-│   ├── handler.py
-│   └── requirements.txt
-├── terraform/                 # Terraform IaC files
-│   ├── main.tf
-│   ├── variables.tf
-│   └── outputs.tf
-├── images/                    # Assets (banner, diagrams)
-│   ├── repo-banner.png
-│   └── architecture-diagram.png
-├── .gitignore
-├── .gitattributes
-├── README.md
-🏗️ Architecture Diagram
 
-🚀 How It Works
-Upload an image to the S3 bucket.
+---
 
-A Lambda function (written in Python) is automatically triggered.
+## 🖼️ Demo & Screenshots
 
-The image is processed (e.g., resized, renamed, compressed).
+Mock pipeline flow:  
+![Pipeline Output](./assets/mock-output.png)
 
-A CloudWatch log is generated for auditing and debugging.
+More screenshots coming soon!
 
-⚙️ Tech Stack
-AWS S3
+---
 
-AWS Lambda
+## 🧪 Monitoring & Debugging
 
-AWS CloudWatch
+- View logs in **CloudWatch**
+- Check Lambda success/failure metrics
+- Use Terraform outputs to verify resources
 
-Terraform
+---
 
-GitHub Actions
+## 💡 Features
 
-Python
-
-🛠️ CI/CD with GitHub Actions
-Every push to main runs:
-
-terraform init, validate, and plan
-
-(optional) Terraform apply with approval step
-
-Lambda function packaging and deployment
-
-See .github/workflows/terraform.yml for details.
-
-📸 Terraform Outputs
-Example after deployment:
-
-bash
-Copy
-Edit
-terraform output
-
-s3_bucket_name = "image-pipeline-uploads"
-lambda_function_name = "imageProcessor"
-cloudwatch_log_group = "/aws/lambda/imageProcessor"
-🧪 Testing & Debugging
-Upload Test: Drop an image in the S3 bucket.
-
-Lambda Logs: View in AWS CloudWatch /aws/lambda/imageProcessor.
-
-Terraform Check: terraform validate, terraform plan.
-
-CI Logs: GitHub Actions tab.
-
-🧠 Portfolio Highlights
-✅ Combines Infra-as-Code + Serverless
-✅ Uses real-world AWS services
-✅ CI/CD pipeline included
-✅ Well-documented with visuals
-✅ Easily extensible
-
-📎 License
-MIT © LMorrison-cyber
-
-
+- ✅ Serverless image processing
+- ✅ Infrastructure as Code with Terraform
+- ✅ GitHub Actions automation
+- ✅ Real-time CloudWatch monitoring
