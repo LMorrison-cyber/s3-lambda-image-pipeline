@@ -43,7 +43,7 @@ Edit
 
 ## 🖼️ Demo & Screenshots
 
-Mock pipeline flow:  
+Pipeline flow:  
 ![Pipeline Output](./assets/mock-output.png)
 
 More screenshots coming soon!
