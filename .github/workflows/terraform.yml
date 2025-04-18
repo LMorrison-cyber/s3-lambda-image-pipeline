@@ -38,7 +38,7 @@ jobs:
 
 
 # === Access Analyzer Deployment ===
-- name: Apply Access Analyzer (Terraform)
+- name: Apply Access Analyzer (Terraform) 
   run: |
     terraform init
     terraform validate
