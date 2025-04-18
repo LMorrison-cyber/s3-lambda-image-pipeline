@@ -1,6 +1,6 @@
 resource "aws_accessanalyzer_analyzer" "default" {
   analyzer_name = "image-pipeline-analyzer"
-  type          = "account"
+  type          = "ACCOUNT"
 
   tags = {
     Name        = "image-pipeline-analyzer"

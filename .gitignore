@@ -1,6 +1,6 @@
-# Terraform stuff
 .terraform/
 *.tfstate
 *.tfstate.backup
-.terraform.lock.hcl
-
+*.zip
+__pycache__/
+.env

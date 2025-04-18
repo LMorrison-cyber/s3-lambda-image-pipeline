@@ -1,0 +1,8 @@
+# Ensure consistent LF endings
+* text=auto
+
+# Binary files
+*.zip binary
+*.png binary
+*.jpg binary
+
